@@ -14,7 +14,7 @@ macro(OBJCOPY_FILE EXE_NAME)
   )
   add_custom_target("TargetObjCopy_${EXE_NAME}"
     ALL DEPENDS ${FO} VERBATIM)
-  get_directory_property(extra_clean_files 
+  get_directory_property(extra_clean_files
     ADDITIONAL_MAKE_CLEAN_FILES)
   set_directory_properties(
     PROPERTIES
