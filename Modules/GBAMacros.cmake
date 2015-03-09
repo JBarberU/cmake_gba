@@ -1,5 +1,5 @@
 # Defines macro objcopy_file, which takes an EXE_NAME and creates ${EXE_NAME}.gba 
-# Defines macro fix_gba, which takes an EXE_NAME, assumes objcopy has already ran and fixes the gba executable
+# Defines macro fix_gba, which takes an EXE_NAME, assumes objcopy has already run and fixes the gba executable
 
 macro(OBJCOPY_FILE EXE_NAME)
   set(FI "${CMAKE_CURRENT_BINARY_DIR}/${EXE_NAME}")
