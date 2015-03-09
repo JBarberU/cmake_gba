@@ -19,11 +19,3 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
-macro(GBA_TARGET_PROPS EXE_NAME)
-  set_target_properties(${EXE_NAME}
-   PROPERTIES
-   LINK_FLAGS -specs=gba.specs
-   COMPILER_FLAGS "-mthumb -mthumb-interwork"
-  )
-endmacro()
-

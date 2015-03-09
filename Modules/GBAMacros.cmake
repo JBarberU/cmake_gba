@@ -1,5 +1,6 @@
-# Defines macro objcopy_file, which takes an EXE_NAME and creates ${EXE_NAME}.gba 
+# Defines macro objcopy_file, which takes an EXE_NAME and creates ${EXE_NAME}.gba
 # Defines macro fix_gba, which takes an EXE_NAME, assumes objcopy has already run and fixes the gba executable
+# Defines macro gba_target_props, which takes an EXE_NAME and sets the proper compiler and linker flags for it
 
 macro(OBJCOPY_FILE EXE_NAME)
   set(FI "${CMAKE_CURRENT_BINARY_DIR}/${EXE_NAME}")
@@ -33,3 +34,10 @@ macro(FIX_GBA EXE_NAME)
   )
 endmacro()
 
+macro(GBA_TARGET_PROPS EXE_NAME)
+  set_target_properties(${EXE_NAME}
+   PROPERTIES
+   LINK_FLAGS -specs=gba.specs
+   COMPILER_FLAGS "-mthumb -mthumb-interwork"
+  )
+endmacro()
