@@ -28,7 +28,7 @@ macro(FIX_GBA EXE_NAME)
     ALL DEPENDS "TargetObjCopy_${EXE_NAME}")
   add_custom_command(
     TARGET "GBAFix_${EXE_NAME}"
-    COMMAND "${DEVKITARM}/bin/gbafix"
+    COMMAND "${DEVKITPRO}/tools/bin/gbafix"
     ARGS "${FI}"
     DEPENDS "${FI}"
   )
