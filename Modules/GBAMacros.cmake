@@ -37,6 +37,6 @@ macro(GBA_TARGET_PROPS EXE_NAME)
   set_target_properties(${EXE_NAME}
    PROPERTIES
    LINK_FLAGS -specs=gba.specs
-   COMPILER_FLAGS "-mthumb -mthumb-interwork"
+   COMPILER_FLAGS "-mcpu=arm7tdmi -mtune=arm7tdmi -mthumb -mthumb-interwork"
   )
 endmacro()
